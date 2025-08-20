@@ -4,16 +4,14 @@ workflows:
     max_build_duration: 60
     environment:
       vars:
-        JAVA_VERSION: "11"
-      groups:
-        - keystore_credentials   # <- we'll store keys here in Codemagic UI
+        JAVA_VERSION: 11
     scripts:
       - name: Clean project
-        script: ./gradlew clean
+        script: cd android && ./gradlew clean
       - name: Build release APK
-        script: ./gradlew assembleRelease
+        script: cd android && ./gradlew assembleRelease
     artifacts:
-      - app/build/outputs/**/*.apk
+      - android/app/build/outputs/**/*.apk
     publishing:
       email:
         recipients:
