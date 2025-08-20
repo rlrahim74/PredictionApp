@@ -1,6 +1,7 @@
 workflows:
   android-release:
-    name: Build Android release
+    name: Android Release (Unsigned)
+    max_build_duration: 60
     environment:
       java: 17
     scripts:
