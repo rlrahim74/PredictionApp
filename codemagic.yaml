@@ -1,18 +1,12 @@
 workflows:
   android-release:
-    name: Build Android Release APK
-    max_build_duration: 60
+    name: Build Android release
     environment:
-      vars:
-        JAVA_VERSION: 11
+      sdk: 31
     scripts:
       - name: Clean project
-        script: cd android && ./gradlew clean
+        script: ./gradlew clean
       - name: Build release APK
-        script: cd android && ./gradlew assembleRelease
+        script: ./gradlew assembleRelease
     artifacts:
-      - android/app/build/outputs/**/*.apk
-    publishing:
-      email:
-        recipients:
-          - rlrahim74@gmail.com
+      - app/build/outputs/**/*.apk
