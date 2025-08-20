@@ -2,7 +2,7 @@ workflows:
   android-release:
     name: Build Android release
     environment:
-      sdk: 31
+      java: 17
     scripts:
       - name: Clean project
         script: ./gradlew clean
