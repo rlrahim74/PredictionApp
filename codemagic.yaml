@@ -5,8 +5,6 @@ workflows:
     environment:
       vars:
         JAVA_VERSION: "11"
-      android:
-        gradle: true
       groups:
         - keystore_credentials   # <- we'll store keys here in Codemagic UI
     scripts:
